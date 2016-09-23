@@ -118,8 +118,6 @@ echo '#### PROCESS COMPLETED ####'
 echo '###########################'
 echo ' '
 
-
-
 # create tmp directory
 sudo mkdir -p /vagrant/"${PROJECTNAME}"/web
 
@@ -162,9 +160,8 @@ cd /vagrant/"${PROJECTNAME}"
 composer install
 EOF
 )
-echo "${SETUP}" > ~/setup.sh
-chmod +x ~/setup.sh
-
+echo "${SETUP}" > setup.sh
+chmod +x setup.sh
 
 if [ -f "/vagrant/${PROJECTNAME}/composer.lock" ] 
 then
@@ -179,10 +176,8 @@ else
     echo '### SETUP MICROSERVICE ###'
     echo '##########################'
     echo ' '
-    source ~/setup.sh
+    source setup.sh
 fi
-
-
 
 echo ' '
 echo '###########################'
